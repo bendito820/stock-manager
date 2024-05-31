@@ -1,14 +1,16 @@
 import React from "react";
+import Text from "../components/Text";
+import Header from "../components/header";
 
 const ProductsPage = () => {
   return (
     <div className="mt-6">
       <div className="space-y-6 max-w-xl">
-        <h1 className="text-4xl font-semibold text-zinc-800">Produtos</h1>
-        <p className="text-zinc-500">
+        <Header>Produtos</Header>
+        <Text>
           Todos os produtos que a empresa possui armazenados. Tanto as
           matérias-primas como os produtos acabados
-        </p>
+        </Text>
       </div>
     </div>
   );

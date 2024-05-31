@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "../components/Text";
 import Header from "../components/header";
+import NewProductButton from "../components/add-new-product-button";
 
 const ProductsPage = () => {
   return (
@@ -11,6 +12,7 @@ const ProductsPage = () => {
           Todos os produtos que a empresa possui armazenados. Tanto as
           matérias-primas como os produtos acabados
         </Text>
+        <NewProductButton />
       </div>
     </div>
   );

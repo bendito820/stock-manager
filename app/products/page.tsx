@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "../components/Text";
+import Text from "../components/text";
 import Header from "../components/header";
 import NewProductButton from "../components/add-new-product-button";
 

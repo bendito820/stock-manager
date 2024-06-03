@@ -2,6 +2,8 @@ import React from "react";
 import Header from "@/app/components/header";
 import Text from "@/app/components/text";
 import NewProductButton from "@/app/components/add-new-product-button";
+import Link from "next/link";
+import ProductsNavBar from "../components/products-nav-bar";
 
 export default function ProductsLayout({
   children,
@@ -15,7 +17,8 @@ export default function ProductsLayout({
             Todos os produtos que a empresa possui armazenados. Tanto as
             matérias-primas como os produtos acabados
           </Text>
-          <NewProductButton />
+
+          <ProductsNavBar />
         </div>
       </div>
       {children}

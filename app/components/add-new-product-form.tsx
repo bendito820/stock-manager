@@ -1,6 +1,5 @@
-import React, { PropsWithChildren } from "react";
-import InputField from "./input-field";
-import Label from "./label-form";
+import InputField from "@/app/components/input-field";
+import Label from "@/app/components/label-form";
 
 export default function AddNewProductForm() {
   return (

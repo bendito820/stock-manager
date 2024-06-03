@@ -1,13 +1,13 @@
 import AddNewGroupButton from "@/app/components/add-new-button";
+import GroupListComponent from "@/app/components/GroupListComponent";
 
 export default function ProductGroupsPage() {
   return (
     <div className="mt-6">
-      <div>
-        <AddNewGroupButton
-          href="/products/groups/new"
-          label="Adicionar Grupo"
-        />
+      <AddNewGroupButton href="/products/groups/new" label="Adicionar Grupo" />
+
+      <div className="mt-8">
+        <GroupListComponent />
       </div>
     </div>
   );

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import NavBar from "./components/nav-bar";
+import NavBar from "@/app/components/nav-bar";
+import QueryClientProvider from "@/app/utils/QueryClientProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        <main className="container mx-auto px-4 max-w-6xl">{children}</main>
+        <QueryClientProvider>
+          <NavBar />
+          <main className="container mx-auto px-4 max-w-6xl">{children}</main>
+        </QueryClientProvider>
       </body>
     </html>
   );

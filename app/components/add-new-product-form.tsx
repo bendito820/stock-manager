@@ -3,12 +3,12 @@
 import { client } from "@/app/api/client";
 import InputField from "@/app/components/input-field";
 import Label from "@/app/components/label-form";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Select from "react-select";
-import { Controller, useForm } from "react-hook-form";
-import Spinner from "./spinner";
-import { useRouter } from "next/navigation";
+import SubmitButton from "./forms/submit-button";
 
 export default function AddNewProductForm() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -82,13 +82,7 @@ export default function AddNewProductForm() {
           <span className="text-red-500">*</span> Campo Obrigatorio
         </p>
 
-        <button
-          disabled={loading}
-          type="submit"
-          className="text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition-colors duration-150"
-        >
-          {loading ? <Spinner /> : "Submit"}
-        </button>
+        <SubmitButton loading={loading} />
       </form>
     </>
   );

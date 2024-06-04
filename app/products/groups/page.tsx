@@ -1,5 +1,5 @@
 import AddNewGroupButton from "@/app/components/add-new-button";
-import GroupListComponent from "@/app/components/GroupListComponent";
+import GroupListComponent from "@/app/components/group-list-component";
 
 export default function ProductGroupsPage() {
   return (

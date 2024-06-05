@@ -21,7 +21,7 @@ export default function AddNewGroupForm() {
       router.back();
     } catch (error) {
       setLoading(false);
-      // Show toas component Here!
+      // Show toas component Here
     }
   };
 

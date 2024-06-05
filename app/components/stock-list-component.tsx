@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Text from "./text";
+import Link from "next/link";
 
 interface Stock {
   _id: string;
@@ -37,12 +38,12 @@ export default function StockListComponent() {
           className="bg-zinc-300 p-2 flex justify-between items-center cursor-pointer hover:font-semibold transition-colors duration-150 rounded-md"
           key={stock._id}
         >
-          <div className="flex gap-4">
+          <Link href={`/products/stock/${stock._id}`} className="flex gap-4">
             <div className="w-12">
               <Text>{stock.quantity}</Text>
             </div>
             <Text>{stock.lote}</Text>
-          </div>
+          </Link>
           <DeleleteGroupButton refetch={refetch} groupId={stock._id} />
         </div>
       ))}

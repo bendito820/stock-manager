@@ -2,8 +2,10 @@
 
 import { client } from "@/app/api/client";
 import Spinner from "@/app/components/spinner";
+import StockOutComponent from "@/app/components/stock-out-component";
 import Text from "@/app/components/text";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 
 interface Stock {
@@ -21,14 +23,22 @@ export default function StockDetailsPage({
 }: {
   params: { stockId: string };
 }) {
+  const router = useRouter();
+  const [rerender, setRerender] = useState<boolean>(false);
+
   const {
     isLoading,
     error,
     refetch,
     data: stock,
-  } = useQuery("stock-detail", () =>
-    client.get<Stock>(`/stock/${params.stockId}/stock`).then((res) => res.data)
-  );
+  } = useQuery({
+    queryKey: "stock-detail",
+    queryFn: () =>
+      client
+        .get<Stock>(`/stock/${params.stockId}/stock`)
+        .then((res) => res.data),
+    refetchOnWindowFocus: true,
+  });
 
   if (isLoading) return <Spinner />;
 
@@ -50,6 +60,18 @@ export default function StockDetailsPage({
             {stock?.date.expireAt}
           </p>
         </div>
+      </div>
+
+      <div className="mt-6">
+        {stock && (
+          <StockOutComponent
+            lote={stock?.lote}
+            date={stock?.date}
+            quantity={stock.quantity}
+            stockId={stock._id}
+            refetch={refetch}
+          />
+        )}
       </div>
     </section>
   );

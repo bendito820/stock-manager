@@ -9,8 +9,8 @@ export default function ProductsLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div>
-      <div className="mt-6 ">
+    <div className="mb-6">
+      <div className="mt-6">
         <div className="space-y-6 max-w-xl">
           <Header>Produtos</Header>
           <Text>

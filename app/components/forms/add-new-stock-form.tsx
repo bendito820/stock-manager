@@ -1,15 +1,15 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import SubmitButton from "@/app/components/forms/submit-button";
 import InputField from "@/app/components/input-field";
 import Label from "@/app/components/label-form";
+import { DatePicker } from "antd";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Select from "react-select";
-import SubmitButton from "@/app/components/forms/submit-button";
-import { DatePicker } from "antd";
 
 export default function AddNewStockForm() {
   const [loading, setLoading] = useState<boolean>(false);

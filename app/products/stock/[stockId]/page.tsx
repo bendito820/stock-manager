@@ -1,6 +1,7 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import StockDetailsSkeleton from "@/app/components/skeleton/stock-details-skeleton";
 import Spinner from "@/app/components/spinner";
 import StockOutComponent from "@/app/components/stock-out-component";
 import Text from "@/app/components/text";
@@ -40,7 +41,7 @@ export default function StockDetailsPage({
     refetchOnWindowFocus: true,
   });
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <StockDetailsSkeleton />;
 
   return (
     <section className="mt-6 bg-zinc-100 max-w-xl rounded-2xl p-4 shadow-md">

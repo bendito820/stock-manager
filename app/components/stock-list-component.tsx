@@ -67,11 +67,12 @@ const DeleleteGroupButton = ({
       setLoading(true);
       await client.delete(`/stock/${stockId}`);
       setLoading(false);
-      toast.success("Grupo apagado com successo");
+      toast.success("Stock apagado com successo");
       refetch();
       // router.push("/products");
     } catch (error) {
       setLoading(false);
+      toast.error("Não foi possivel apagar o stock");
     }
   };
   return (

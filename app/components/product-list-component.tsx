@@ -27,14 +27,15 @@ export default function ProducListComponent() {
   return (
     <div className="space-y-2 max-w-xl rounded-sm">
       {products?.map((product) => (
-        <Link
-          href={`/products/${product._id}`}
+        <div
           className="bg-zinc-300 p-2 flex justify-between items-center cursor-pointer hover:font-semibold transition-colors duration-150 rounded-md"
           key={product._id}
         >
-          <Text>{product.name}</Text>
+          <Link href={`/products/${product._id}`}>
+            <Text>{product.name}</Text>
+          </Link>
           <DeleleteProductButton refetch={refetch} productId={product._id} />
-        </Link>
+        </div>
       ))}
     </div>
   );

@@ -57,6 +57,7 @@ const DeleleteGroupButton = ({
       // router.push("/products");
     } catch (error) {
       setLoading(false);
+      toast.error("Não foi possivel apagar o grupo");
     }
   };
   return (

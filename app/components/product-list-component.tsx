@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Text from "@/app/components/text";
+import Link from "next/link";
 
 export default function ProducListComponent() {
   const {
@@ -24,13 +25,14 @@ export default function ProducListComponent() {
   return (
     <div className="space-y-2 max-w-xl rounded-sm">
       {products?.map((product) => (
-        <div
+        <Link
+          href={`/products/${product._id}`}
           className="bg-zinc-300 p-2 flex justify-between items-center cursor-pointer hover:font-semibold transition-colors duration-150 rounded-md"
           key={product._id}
         >
           <Text>{product.name}</Text>
           <DeleleteProductButton refetch={refetch} productId={product._id} />
-        </div>
+        </Link>
       ))}
     </div>
   );

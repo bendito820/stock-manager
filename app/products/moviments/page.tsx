@@ -1,6 +1,7 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import MovimentPageSkeleton from "@/app/components/skeleton/moviment-page-skeleton";
 import Spinner from "@/app/components/spinner";
 import Text from "@/app/components/text";
 import { useRouter } from "next/navigation";
@@ -20,10 +21,10 @@ export default function MovimentsPage() {
     refetchOnWindowFocus: true,
   });
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <MovimentPageSkeleton />;
 
   return (
-    <section className="mt-6  max-w-xl ">
+    <section className="mt-6 max-w-xl ">
       {moviments && (
         <div className="space-y-6">
           {moviments?.map((moviment: any) => (

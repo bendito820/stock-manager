@@ -1,12 +1,13 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import LoadingListSkeleton from "@/app/components/skeleton/loading-list-skeleton";
 import Spinner from "@/app/components/spinner";
+import Link from "next/link";
 import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Text from "./text";
-import Link from "next/link";
 
 interface Stock {
   _id: string;
@@ -29,7 +30,7 @@ export default function StockListComponent() {
     client.get<any>("/stock").then((res) => res.data)
   );
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <LoadingListSkeleton />;
 
   return (
     <div className="space-y-2 max-w-xl rounded-sm">

@@ -1,6 +1,7 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import LoadingListSkeleton from "@/app/components/skeleton/loading-list-skeleton";
 import Spinner from "@/app/components/spinner";
 import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -19,7 +20,7 @@ export default function GroupListComponent() {
       .then((res) => res.data)
   );
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <LoadingListSkeleton />;
 
   return (
     <div className="space-y-2 max-w-xl rounded-sm">

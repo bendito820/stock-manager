@@ -1,4 +1,4 @@
-import AddNewProductForm from "@/app/components/add-new-product-form";
+import AddNewProductForm from "@/app/components/forms/add-new-product-form";
 import Header from "@/app/components/header";
 import Text from "@/app/components/text";
 

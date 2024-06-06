@@ -7,6 +7,7 @@ import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Text from "./text";
+import toast from "react-hot-toast";
 
 export default function GroupListComponent() {
   const {
@@ -51,6 +52,7 @@ const DeleleteGroupButton = ({
       setLoading(true);
       await client.delete(`/groups/${groupId}`);
       setLoading(false);
+      toast.success("Grupo apagado com successo");
       refetch();
       // router.push("/products");
     } catch (error) {

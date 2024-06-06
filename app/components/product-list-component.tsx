@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import Text from "@/app/components/text";
 import Link from "next/link";
 import LoadingListSkeleton from "@/app/components/skeleton/loading-list-skeleton";
+import toast from "react-hot-toast";
 
 export default function ProducListComponent() {
   const {
@@ -53,6 +54,7 @@ const DeleleteProductButton = ({
       setLoading(true);
       await client.delete(`/product/${productId}`);
       setLoading(false);
+      toast.success("Produto apagado com successo");
       refetch();
       // router.push("/products");
     } catch (error) {

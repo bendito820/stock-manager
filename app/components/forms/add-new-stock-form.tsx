@@ -8,6 +8,7 @@ import { DatePicker } from "antd";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useQuery } from "react-query";
 import Select from "react-select";
 
@@ -47,8 +48,10 @@ export default function AddNewStockForm() {
       await client.post("/stock", newStock);
       router.push("/products/stock");
       setLoading(false);
+      toast.success("Stock Adicionado com successo");
     } catch (error) {
       setLoading(false);
+      toast.error("Não foi possivel salvar no Stock");
     }
   };
 

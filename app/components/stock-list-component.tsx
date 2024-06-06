@@ -8,6 +8,7 @@ import { useState } from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useQuery } from "react-query";
 import Text from "./text";
+import toast from "react-hot-toast";
 
 interface Stock {
   _id: string;
@@ -66,6 +67,7 @@ const DeleleteGroupButton = ({
       setLoading(true);
       await client.delete(`/stock/${stockId}`);
       setLoading(false);
+      toast.success("Grupo apagado com successo");
       refetch();
       // router.push("/products");
     } catch (error) {

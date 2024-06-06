@@ -1,6 +1,7 @@
 "use client";
 
 import { client } from "@/app/api/client";
+import ProductDetailsSkeleton from "@/app/components/skeleton/product-details-skeleton";
 import Spinner from "@/app/components/spinner";
 import Text from "@/app/components/text";
 import { useRouter } from "next/navigation";
@@ -25,7 +26,7 @@ export default function ProductsDetailPage({
     refetchOnWindowFocus: true,
   });
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <ProductDetailsSkeleton />;
 
   return (
     <section className="mt-6  max-w-xl ">

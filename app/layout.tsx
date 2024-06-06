@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 import NavBar from "@/app/components/nav-bar";
 import QueryClientProvider from "@/app/utils/QueryClientProvider";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <main className="container mx-auto px-4 max-w-6xl">{children}</main>
         </QueryClientProvider>
       </body>
+      <Toaster />
     </html>
   );
 }

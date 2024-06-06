@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Select from "react-select";
-import SubmitButton from "./forms/submit-button";
+import SubmitButton from "@/app/components/forms/submit-button";
 
 export default function AddNewProductForm() {
   const [loading, setLoading] = useState<boolean>(false);

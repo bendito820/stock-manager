@@ -2,7 +2,6 @@
 
 import { client } from "@/app/api/client";
 import ProductDetailsSkeleton from "@/app/components/skeleton/product-details-skeleton";
-import Spinner from "@/app/components/spinner";
 import Text from "@/app/components/text";
 import { useRouter } from "next/navigation";
 import { useQuery } from "react-query";

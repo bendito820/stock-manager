@@ -1,5 +1,4 @@
 import Skeleton from "@/app/components/skeleton/skeleton";
-import Text from "@/app/components/text";
 
 const products: {}[] = [{}, {}];
 

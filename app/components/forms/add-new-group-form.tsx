@@ -7,6 +7,7 @@ import Spinner from "@/app/components/spinner";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function AddNewGroupForm() {
   const { handleSubmit, control } = useForm();
@@ -18,10 +19,12 @@ export default function AddNewGroupForm() {
       setLoading(true);
       await client.post("/groups", data);
       setLoading(false);
+      toast.success("Grupo Adicionado com successo");
       router.back();
     } catch (error) {
       setLoading(false);
       // Show toas component Here
+      toast.error("Não foi possivel salvar Grupo");
     }
   };
 

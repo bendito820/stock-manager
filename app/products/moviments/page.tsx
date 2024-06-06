@@ -29,10 +29,16 @@ export default function MovimentsPage() {
           {moviments?.map((moviment: any) => (
             <div
               key={moviment._id}
-              className="space-y-6 bg-zinc-100 rounded-2xl p-4 shadow-md"
+              className={`space-y-6 bg-zinc-100 rounded-2xl p-4 shadow-md`}
             >
-              <Text>{moviment?.productStockId}</Text>
-              <Text>Tipo: {moviment?.type}</Text>
+              <div
+                className={`rounded-xl p-4 ${
+                  moviment?.type === "in" ? "bg-emerald-200" : "bg-red-200"
+                }`}
+              >
+                <Text>{moviment?.productStockId}</Text>
+                <Text>Tipo: {moviment?.type}</Text>
+              </div>
               <div>
                 <Text>Quantidade: {moviment?.quantity}</Text>
               </div>

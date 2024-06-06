@@ -9,6 +9,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import Select from "react-select";
 import SubmitButton from "@/app/components/forms/submit-button";
+import toast from "react-hot-toast";
 
 export default function AddNewProductForm() {
   const [loading, setLoading] = useState<boolean>(false);
@@ -33,8 +34,10 @@ export default function AddNewProductForm() {
       await client.post("/product", data);
       router.push("/products");
       setLoading(false);
+      toast.success("Produto adicionado com successo!");
     } catch (error) {
       setLoading(false);
+      toast.error("Não foi possivel salvar Produto!");
     }
   };
 

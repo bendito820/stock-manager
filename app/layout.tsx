@@ -24,8 +24,8 @@ export default function RootLayout({
           <NavBar />
           <main className="container mx-auto px-4 max-w-6xl">{children}</main>
         </QueryClientProvider>
+        <Toaster />
       </body>
-      <Toaster />
     </html>
   );
 }
